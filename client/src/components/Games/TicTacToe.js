@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import './TicTacToe.css';
 
 const TicTacToe = () => {
     const [board, setBoard] = useState(Array(9).fill(null));
@@ -16,7 +15,7 @@ const TicTacToe = () => {
         checkWinner(newBoard, 'X');
     };
 
-    const aiMove = () => {
+    const aiMove = useCallback(() => {
         let available = board.map((val, idx) => val === null ? idx : null).filter(val => val !== null);
         if (available.length === 0) return;
         const move = available[Math.floor(Math.random() * available.length)];
@@ -25,7 +24,7 @@ const TicTacToe = () => {
         setBoard(newBoard);
         setIsPlayerTurn(true);
         checkWinner(newBoard, 'O');
-    };
+    }, [board]);
 
     const checkWinner = (board, player) => {
         const wins = [
@@ -56,7 +55,8 @@ const TicTacToe = () => {
     };
 
     useEffect(() => {
-        if (!isPlayerTurn && !winner) aiMove();
+        const timer = setTimeout(() => aiMove(), 500);
+        return () => clearTimeout(timer);
     }, [isPlayerTurn, winner, aiMove]);
 
     return (
