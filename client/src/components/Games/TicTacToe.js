@@ -16,16 +16,17 @@ const TicTacToe = () => {
         checkWinner(newBoard, 'X');
     };
 
-    const aiMove = useCallback(() => {
-        let available = board.map((val, idx) => val === null ? idx : null).filter(val => val !== null);
-        if (available.length === 0) return;
-        const move = available[Math.floor(Math.random() * available.length)];
-        const newBoard = [...board];
-        newBoard[move] = 'O';
-        setBoard(newBoard);
-        setIsPlayerTurn(true);
-        checkWinner(newBoard, 'O');
-    }, [board, checkWinner]);
+    const saveScore = useCallback(async (score) => {
+        const token = localStorage.getItem('token');
+        if (!token) return;
+        try {
+            await axios.post(`${API_BASE}/api/scores`, { game: 'TicTacToe', score }, {
+                headers: { Authorization: `Bearer ${token}` }
+            });
+        } catch (err) {
+            console.error(err);
+        }
+    }, [API_BASE]);
 
     const checkWinner = useCallback((currentBoard, player) => {
         const wins = [
@@ -47,17 +48,16 @@ const TicTacToe = () => {
         return false;
     }, [saveScore]);
 
-    const saveScore = useCallback(async (score) => {
-        const token = localStorage.getItem('token');
-        if (!token) return;
-        try {
-            await axios.post(`${API_BASE}/api/scores`, { game: 'TicTacToe', score }, {
-                headers: { Authorization: `Bearer ${token}` }
-            });
-        } catch (err) {
-            console.error(err);
-        }
-    }, []);
+    const aiMove = useCallback(() => {
+        let available = board.map((val, idx) => val === null ? idx : null).filter(val => val !== null);
+        if (available.length === 0) return;
+        const move = available[Math.floor(Math.random() * available.length)];
+        const newBoard = [...board];
+        newBoard[move] = 'O';
+        setBoard(newBoard);
+        setIsPlayerTurn(true);
+        checkWinner(newBoard, 'O');
+    }, [board, checkWinner]);
 
     useEffect(() => {
         const timer = setTimeout(() => aiMove(), 500);
