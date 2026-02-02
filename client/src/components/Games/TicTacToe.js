@@ -60,8 +60,7 @@ const TicTacToe = () => {
     }, [board, checkWinner]);
 
     useEffect(() => {
-        const timer = setTimeout(() => aiMove(), 500);
-        return () => clearTimeout(timer);
+        if (!isPlayerTurn && !winner) aiMove();
     }, [isPlayerTurn, winner, aiMove]);
 
     return (
