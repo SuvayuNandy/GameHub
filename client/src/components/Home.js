@@ -46,13 +46,21 @@ const games = [
     description: 'Grow your snake, collect food, and avoid crashing.',
     tone: 'emerald',
   },
-    {
+  {
     name: 'Sudoku',
     path: '/games/sudoku',
     label: 'Logic Puzzle',
     token: '9×9',
     description: 'Fill every row, column, and box with 1–9. Pure logic, no guessing.',
     tone: 'cobalt',
+  },
+  {
+    name: 'Memory Card Flip',
+    path: '/games/memory-card',
+    label: 'Memory Challenge',
+    token: '🃏',
+    description: 'Flip cards and match pairs — test your memory under the clock.',
+    tone: 'teal',
   },
 ];
 

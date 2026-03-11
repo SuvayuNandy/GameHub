@@ -1,0 +1,355 @@
+/* ─────────────────────────────────────────────
+   Memory Card Flip Game — Styles
+   Matches the dark-premium palette of GameHub
+───────────────────────────────────────────── */
+
+/* Wrapper / full-page background */
+.mcg-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 60%, #0f172a 100%);
+  padding: 2rem 1rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Container card */
+.mcg-container {
+  width: 100%;
+  max-width: 780px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(139, 92, 246, 0.12);
+  padding: 2rem 2rem 2.5rem;
+  backdrop-filter: blur(18px);
+  position: relative;
+}
+
+/* ── Header ── */
+.mcg-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.mcg-title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  color: #f8fafc;
+  margin: 0 0 0.25rem;
+  letter-spacing: -0.03em;
+  text-shadow: 0 2px 20px rgba(139, 92, 246, 0.4);
+}
+
+.mcg-subtitle {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ── Difficulty row ── */
+.mcg-difficulty-row {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-bottom: 1.4rem;
+  flex-wrap: wrap;
+}
+
+.mcg-diff-btn {
+  padding: 0.45rem 1.2rem;
+  border-radius: 999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.02em;
+}
+
+.mcg-diff-btn:hover {
+  background: rgba(139, 92, 246, 0.18);
+  border-color: rgba(139, 92, 246, 0.5);
+  color: #e2e8f0;
+}
+
+.mcg-diff-btn--active {
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.45);
+}
+
+/* ── Stats bar ── */
+.mcg-stats {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.mcg-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 0.5rem 1.1rem;
+  min-width: 72px;
+}
+
+.mcg-stat--best {
+  border-color: rgba(251, 191, 36, 0.35);
+  background: rgba(251, 191, 36, 0.06);
+}
+
+.mcg-stat-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.mcg-stat-value {
+  font-size: 1.15rem;
+  color: #f1f5f9;
+  font-weight: 700;
+  margin-top: 0.1rem;
+}
+
+/* ── Progress bar ── */
+.mcg-progress-track {
+  height: 5px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 1.4rem;
+}
+
+.mcg-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #7c3aed, #06b6d4);
+  border-radius: 999px;
+  width: 0%;
+}
+
+/* ── Win banner ── */
+.mcg-win-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.22), rgba(6, 182, 212, 0.14));
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  border-radius: 16px;
+  padding: 1rem 1.4rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.mcg-win-emoji {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.mcg-win-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #f8fafc;
+  margin: 0 0 0.15rem;
+}
+
+.mcg-win-sub {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.mcg-play-again {
+  margin-left: auto;
+  padding: 0.55rem 1.4rem;
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.mcg-play-again:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.5);
+}
+
+/* ── Grid ── */
+.mcg-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Card ── */
+.mcg-card {
+  aspect-ratio: 1;
+  perspective: 900px;
+  cursor: pointer;
+  border-radius: 14px;
+  position: relative;
+}
+
+.mcg-card--disabled {
+  cursor: not-allowed;
+}
+
+.mcg-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 14px;
+}
+
+.mcg-card-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Back face */
+.mcg-card-back {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+  border: 1.5px solid rgba(139, 92, 246, 0.3);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 4px 16px rgba(0, 0, 0, 0.35);
+ transform: rotateY(0deg);
+}
+
+.mcg-card-back-icon {
+  font-size: 1.6rem;
+  opacity: 0.55;
+  user-select: none;
+}
+
+/* Front face */
+.mcg-card-front {
+  background: linear-gradient(135deg, #2e1065 0%, #1e3a8a 100%);
+  border: 1.5px solid rgba(99, 102, 241, 0.45);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 6px 20px rgba(0, 0, 0, 0.3);
+  transform: rotateY(180deg);
+}
+
+.mcg-symbol {
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  user-select: none;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+}
+
+/* Matched state */
+.mcg-card--matched .mcg-card-front {
+  background: linear-gradient(135deg, #064e3b, #065f46);
+  border-color: rgba(16, 185, 129, 0.55);
+  box-shadow: 0 0 18px rgba(16, 185, 129, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Match shimmer overlay */
+.mcg-match-shimmer {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.4) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Controls ── */
+.mcg-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.mcg-btn {
+  padding: 0.55rem 1.6rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  letter-spacing: 0.02em;
+}
+
+.mcg-btn--ghost {
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
+  color: #cbd5e1;
+}
+
+.mcg-btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #f1f5f9;
+  transform: translateY(-2px);
+}
+
+/* ── Confetti ── */
+.mcg-confetti-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.mcg-confetti-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  background-color: var(--dot-color, #7c3aed);
+  top: 50%;
+  left: 50%;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .mcg-container {
+    padding: 1.2rem 1rem 2rem;
+    border-radius: 18px;
+  }
+
+  .mcg-grid {
+    gap: 0.5rem;
+  }
+
+  .mcg-stats {
+    gap: 0.6rem;
+  }
+
+  .mcg-stat {
+    padding: 0.4rem 0.75rem;
+    min-width: 60px;
+  }
+
+  .mcg-win-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mcg-play-again {
+    margin: 0 auto;
+  }
+}

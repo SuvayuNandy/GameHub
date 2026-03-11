@@ -14,7 +14,7 @@ import PrivacyPolicy from './components/Info/PrivacyPolicy';
 import TermsOfService from './components/Info/TermsOfService';
 import NumberGuessingGame from './components/Games/NumberGuessingGame';
 import Sudoku from './components/Games/Sudoku';
-
+import MemoryCardGame from './components/Games/MemoryCardGame';
 import SnakeGame from "./components/Games/SnakeGame";
 
 function App() {
@@ -36,6 +36,7 @@ function App() {
               element={<NumberGuessingGame />}
             />
             <Route path="/games/snake" element={<SnakeGame />} />
+            <Route path="/games/memory-card" element={<MemoryCardGame />} />
             <Route path="/about" element={<About />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />
